@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/Custom%20Things/custom_colors.dart';
-import 'package:my_portfolio/Pages/app_design.dart';
+import 'package:my_portfolio/Pages/app_structure.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      title: 'devShakib Portfolio',
+      title: 'devShakib | Developer',
       color: CustomColors.primaryColor,
-      home: AppDesign(),
+      home: AppStructure(),
     );
   }
 }
