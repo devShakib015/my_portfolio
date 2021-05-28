@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_portfolio/Custom%20Things/custom_colors.dart';
+import 'package:my_portfolio/Pages/app_design.dart';
 
 void main() => runApp(MyApp());
 
@@ -6,17 +9,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light().copyWith(
+        accentColor: CustomColors.primaryColor,
+        primaryColor: CustomColors.primaryColor,
+        appBarTheme: AppBarTheme(
+          backgroundColor: CustomColors.primaryColor,
         ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
+        textTheme: GoogleFonts.latoTextTheme(
+          Theme.of(context).textTheme,
         ),
       ),
+      title: 'devShakib Portfolio',
+      color: CustomColors.primaryColor,
+      home: AppDesign(),
     );
   }
 }
