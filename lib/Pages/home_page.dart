@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/Custom%20Things/responsive_size.dart';
 import 'package:my_portfolio/Pages/components/heading_text.dart';
+import 'package:my_portfolio/Pages/components/home_page_main_container.dart';
 import 'package:my_portfolio/Pages/components/typewriter_animated_text.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
+    double _responsivePadding = _width >= ResponsiveSize.mobileWidth ? 50 : 15;
     return Container(
       child: SingleChildScrollView(
         child: Column(
@@ -15,15 +18,18 @@ class HomePage extends StatelessWidget {
             _width >= ResponsiveSize.tabWidth
                 ? Row(
                     mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      HeadingText(),
+                      HeadingText(
+                        responsivePadding: _responsivePadding,
+                      ),
                       Expanded(
                         child: Align(
                           alignment: Alignment.topRight,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 50, vertical: 30),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: _responsivePadding, vertical: 30),
                             child: TypewriterAnimatedTextHome(),
                           ),
                         ),
@@ -33,30 +39,21 @@ class HomePage extends StatelessWidget {
                 : Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      HeadingText(),
+                      HeadingText(
+                        responsivePadding: _responsivePadding,
+                      ),
                       Align(
                         alignment: Alignment.topLeft,
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 50,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: _responsivePadding,
                           ),
                           child: TypewriterAnimatedTextHome(),
                         ),
                       ),
                     ],
                   ),
-            Container(
-              height: 1000,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  color: Colors.grey[100],
-                  child: Center(
-                    child: Text("Something!!"),
-                  ),
-                ),
-              ),
-            ),
+            HomePageMainContainer(height: _height, width: _width),
           ],
         ),
       ),

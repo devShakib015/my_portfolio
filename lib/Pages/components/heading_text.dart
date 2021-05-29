@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/Custom%20Things/custom_strings.dart';
 
 class HeadingText extends StatelessWidget {
+  final double responsivePadding;
   const HeadingText({
     Key? key,
+    required this.responsivePadding,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 16),
+      padding:
+          EdgeInsets.symmetric(horizontal: responsivePadding, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

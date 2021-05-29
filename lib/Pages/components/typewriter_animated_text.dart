@@ -16,24 +16,14 @@ class TypewriterAnimatedTextHome extends StatelessWidget {
       child: DefaultTextStyle(
         style: _textStyle,
         child: AnimatedTextKit(
-          animatedTexts: [
-            TypewriterAnimatedText(
-              CustomStrings.keyword1,
-              speed: Duration(milliseconds: 200),
-            ),
-            TypewriterAnimatedText(
-              CustomStrings.keyword2,
-              speed: Duration(milliseconds: 200),
-            ),
-            TypewriterAnimatedText(
-              CustomStrings.keyword3,
-              speed: Duration(milliseconds: 200),
-            ),
-            TypewriterAnimatedText(
-              CustomStrings.keyword4,
-              speed: Duration(milliseconds: 200),
-            ),
-          ],
+          animatedTexts: CustomStrings.keywords
+              .map(
+                (text) => TyperAnimatedText(
+                  text,
+                  speed: Duration(milliseconds: 200),
+                ),
+              )
+              .toList(),
           repeatForever: true,
         ),
       ),
