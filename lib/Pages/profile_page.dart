@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portfolio/Custom%20Things/custom_colors.dart';
 import 'package:my_portfolio/Custom%20Things/custom_strings.dart';
 import 'package:my_portfolio/Custom%20Things/launch_url.dart';
 import 'package:my_portfolio/Custom%20Things/my_images.dart';
@@ -11,36 +11,6 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
     double _responsivePadding = _width >= ResponsiveSize.mobileWidth ? 50 : 15;
-
-    List<Map<String, dynamic>> _contactButtons = [
-      {
-        "icon": CupertinoIcons.mail_solid,
-        "url": "mailto:${CustomStrings.myMail}",
-        "tooltip": CustomStrings.myMail,
-      },
-      {
-        "icon": CupertinoIcons.phone_fill,
-        "url": "tel:${CustomStrings.myPhone}",
-        "tooltip": CustomStrings.myPhone,
-      },
-      {
-        "icon": FontAwesomeIcons.facebookMessenger,
-        "url": "https://m.me/${CustomStrings.myMessenger}/",
-        "tooltip": CustomStrings.myMessenger,
-      },
-      {
-        "icon": FontAwesomeIcons.whatsappSquare,
-        "url":
-            "https://api.whatsapp.com/send?phone=${CustomStrings.myWhatsApp}",
-        "tooltip": CustomStrings.myWhatsApp,
-      },
-      {
-        "icon": FontAwesomeIcons.weixin,
-        "url":
-            "https://weixin://contacts/profile/{${CustomStrings.myWhatsApp}}",
-        "tooltip": CustomStrings.myWechat,
-      }
-    ];
 
     return Container(
       child: Padding(
@@ -54,7 +24,7 @@ class ProfilePage extends StatelessWidget {
                     flex: 1,
                     child: SingleChildScrollView(
                         child: ProfileDetailsSection(
-                            contactButtons: _contactButtons)),
+                            contactButtons: CustomStrings.contactButtons)),
                   ),
                   SizedBox(
                     width: 50,
@@ -79,7 +49,8 @@ class ProfilePage extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    ProfileDetailsSection(contactButtons: _contactButtons),
+                    ProfileDetailsSection(
+                        contactButtons: CustomStrings.contactButtons),
                   ],
                 ),
               ),
@@ -98,7 +69,7 @@ class ProfileImageSection extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: Image.asset(
-        MyImages.profileImage,
+        MyImages.myProfileImage,
         fit: BoxFit.cover,
       ),
     );
@@ -145,6 +116,27 @@ class ProfileDetailsSection extends StatelessWidget {
             style: TextStyle(
               color: Colors.black87,
               fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+            style: ButtonStyle(
+              padding: MaterialStateProperty.all(EdgeInsets.all(16)),
+              backgroundColor: MaterialStateProperty.all(
+                Colors.black54,
+              ),
+            ),
+            onPressed: () async {
+              await MyUrl.launchURL(CustomStrings.myResume);
+            },
+            child: Text(
+              "My Resume",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           SizedBox(

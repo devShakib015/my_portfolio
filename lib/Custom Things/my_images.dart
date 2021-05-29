@@ -1,5 +1,5 @@
 class MyImages {
   MyImages._();
 
-  static final String profileImage = "assets/images/profile.jpg";
+  static final String myProfileImage = "assets/images/profile.jpg";
 }
