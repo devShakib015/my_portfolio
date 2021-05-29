@@ -70,7 +70,7 @@ class _AppStructureState extends State<AppStructure> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 2, vertical: 6),
+                                horizontal: 6, vertical: 10),
                             child: Wrap(
                               alignment: WrapAlignment.end,
                               runAlignment: WrapAlignment.end,
