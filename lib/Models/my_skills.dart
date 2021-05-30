@@ -52,11 +52,6 @@ class MySkills {
       progress: 89,
     ),
     Skill(
-      title: "Google Ads",
-      image: "$_path/icons8-google-ads-480.png",
-      progress: 83,
-    ),
-    Skill(
       title: "Google Admob",
       image: "$_path/icons8-google-admob-480.png",
       progress: 93,
