@@ -19,9 +19,9 @@ class MyStrings {
   ];
 
   static final String myName = "Hossain K M Shahriar";
-  static final String myTagLine = "Software Engineer, YZU 2021";
+  static final String myTagLine = "Software Engineer, YZU-CHINA, 2021";
   static final String myDescription =
-      "Et aute est sunt dolore nostrud. Et dolore voluptate occaecat ut commodo laboris ullamco est esse ad. Dolor aute veniam reprehenderit nulla et eu consequat do nisi elit ipsum veniam ad. Irure ad duis occaecat amet laborum irure.\n\nEt aute est sunt dolore nostrud. Et dolore voluptate occaecat ut commodo laboris ullamco est esse ad. Dolor aute veniam reprehenderit nulla et eu consequat do nisi elit ipsum veniam ad. Irure ad duis occaecat amet laborum irure.";
+      "It’s the time when I can believe in myself. After all these years of learning and practicing now I feel that I can do professional and serious jobs.\nI was so upset at a time when I wasn't able to figure out what I do and what’s my ability. But struggling and working hard gave me confidence.\nI’m a Flutter developer. I was developing things using flutter for almost a year. Before this I was busy working with python and the frameworks of it. For my graduation project I was looking for a way to build it and I found Flutter. Which changes my developing career completely. I just love coding Flutter. It’s beautiful, versatile and it’s a super power.\nI’m fully ready for the interview as a flutter developer.";
   static final String myMail = "devshakib015@gmail.com";
   static final String myPhone = "+8801710265421";
   static final String myMessenger = "venomShakib";
