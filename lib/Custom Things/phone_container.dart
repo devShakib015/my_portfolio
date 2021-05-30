@@ -45,11 +45,11 @@ class PhoneContainer extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 10,
+                top: 8,
                 left: 100,
                 child: Container(
-                  width: 40,
-                  height: 5,
+                  width: 36,
+                  height: 4,
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
                     borderRadius: BorderRadius.circular(30),
@@ -57,11 +57,11 @@ class PhoneContainer extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 7.5,
+                top: 6,
                 left: 160,
                 child: Container(
-                  width: 10,
-                  height: 10,
+                  width: 8,
+                  height: 8,
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
                     borderRadius: BorderRadius.circular(30),
@@ -74,7 +74,7 @@ class PhoneContainer extends StatelessWidget {
                 child: Container(
                   width: _phoneWidth - _border * 2,
                   height: _phoneheight - _border * 4,
-                  color: Colors.white,
+                  color: MyColors.phoneColor,
                   child: Image.asset(
                     image,
                     fit: BoxFit.fill,
