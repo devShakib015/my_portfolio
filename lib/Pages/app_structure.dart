@@ -66,39 +66,44 @@ class _AppStructureState extends State<AppStructure> {
                     child: Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 6, vertical: 10),
-                            child: Wrap(
-                              alignment: WrapAlignment.end,
-                              runAlignment: WrapAlignment.end,
-                              children: MyColors.bgColors
-                                  .map(
-                                    (color) => MaterialButton(
-                                      padding: EdgeInsets.zero,
-                                      minWidth: 30,
-                                      height: 18,
-                                      onPressed: () {
-                                        setState(() {
-                                          _selectedBg =
-                                              MyColors.bgColors.indexOf(color);
-                                        });
-                                      },
-                                      child: Container(
-                                        width: 15,
-                                        height: 15,
-                                        decoration: BoxDecoration(
-                                          color: color,
-                                          borderRadius: BorderRadius.circular(
-                                            50,
+                            child: Align(
+                              alignment: _width >= ResponsiveSize.tabWidth
+                                  ? Alignment.centerRight
+                                  : Alignment.center,
+                              child: Wrap(
+                                alignment: WrapAlignment.end,
+                                runAlignment: WrapAlignment.end,
+                                children: MyColors.bgColors
+                                    .map(
+                                      (color) => MaterialButton(
+                                        padding: EdgeInsets.zero,
+                                        minWidth: 30,
+                                        height: 18,
+                                        onPressed: () {
+                                          setState(() {
+                                            _selectedBg = MyColors.bgColors
+                                                .indexOf(color);
+                                          });
+                                        },
+                                        child: Container(
+                                          width: 15,
+                                          height: 15,
+                                          decoration: BoxDecoration(
+                                            color: color,
+                                            borderRadius: BorderRadius.circular(
+                                              50,
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  )
-                                  .toList(),
+                                    )
+                                    .toList(),
+                              ),
                             ),
                           ),
                           Expanded(
@@ -108,6 +113,8 @@ class _AppStructureState extends State<AppStructure> {
                             height: _height >= ResponsiveSize.tabHeight
                                 ? _height * 0.09
                                 : _height * 0.12,
+                            width:
+                                _width >= ResponsiveSize.tabWidth ? 300 : null,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Row(
