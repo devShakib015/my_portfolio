@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/Custom%20Things/custom_strings.dart';
+import 'package:my_portfolio/Models/my_strings.dart';
 
 class HeadingText extends StatelessWidget {
   final double responsivePadding;
@@ -17,7 +17,7 @@ class HeadingText extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            CustomStrings.headLine,
+            MyStrings.headLine,
             style: TextStyle(
               color: Colors.black87,
               fontSize: 32,
@@ -25,7 +25,7 @@ class HeadingText extends StatelessWidget {
             ),
           ),
           Text(
-            CustomStrings.tagLine.toUpperCase(),
+            MyStrings.tagLine.toUpperCase(),
             style: TextStyle(
               color: Colors.black54,
               fontSize: 14,

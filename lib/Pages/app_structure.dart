@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/Custom%20Things/custom_colors.dart';
-import 'package:my_portfolio/Custom%20Things/responsive_size.dart';
+import 'package:my_portfolio/Models/my_colors.dart';
+import 'package:my_portfolio/Models/responsive_size.dart';
 import 'package:my_portfolio/Pages/home_page.dart';
 import 'package:my_portfolio/Pages/profile_page.dart';
 import 'package:my_portfolio/Pages/skills_page.dart';
@@ -15,7 +15,7 @@ class AppStructure extends StatefulWidget {
 
 class _AppStructureState extends State<AppStructure> {
   int _selectedTab = 1;
-  int _selectedBg = Random().nextInt(CustomColors.bgColors.length);
+  int _selectedBg = Random().nextInt(MyColors.bgColors.length);
 
   Widget _selectTabs() {
     if (_selectedTab == 1) {
@@ -35,7 +35,7 @@ class _AppStructureState extends State<AppStructure> {
 
     return Scaffold(
       //Backgroud Color
-      backgroundColor: CustomColors.bgColors[_selectedBg],
+      backgroundColor: MyColors.bgColors[_selectedBg],
       body: Stack(
         children: [
           AnimatedContainer(
@@ -43,7 +43,7 @@ class _AppStructureState extends State<AppStructure> {
             curve: Curves.easeInBack,
             width: _width,
             height: _height,
-            color: CustomColors.bgColors[_selectedBg],
+            color: MyColors.bgColors[_selectedBg],
           ),
           Padding(
             padding: _width >= ResponsiveSize.fhdWidth
@@ -74,7 +74,7 @@ class _AppStructureState extends State<AppStructure> {
                             child: Wrap(
                               alignment: WrapAlignment.end,
                               runAlignment: WrapAlignment.end,
-                              children: CustomColors.bgColors
+                              children: MyColors.bgColors
                                   .map(
                                     (color) => MaterialButton(
                                       padding: EdgeInsets.zero,
@@ -82,8 +82,8 @@ class _AppStructureState extends State<AppStructure> {
                                       height: 18,
                                       onPressed: () {
                                         setState(() {
-                                          _selectedBg = CustomColors.bgColors
-                                              .indexOf(color);
+                                          _selectedBg =
+                                              MyColors.bgColors.indexOf(color);
                                         });
                                       },
                                       child: Container(

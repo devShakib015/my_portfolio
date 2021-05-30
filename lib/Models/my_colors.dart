@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CustomColors {
-  CustomColors._();
+class MyColors {
+  MyColors._();
 
   static final Color primaryColor = Color(0xff181818);
+  static final Color phoneColor = Color(0xff222222);
 
   static final List<Color> bgColors = [
     Color(0xff10505B),

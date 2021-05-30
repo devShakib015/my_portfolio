@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/Custom%20Things/responsive_size.dart';
+import 'package:my_portfolio/Models/responsive_size.dart';
 import 'package:my_portfolio/Pages/components/heading_text.dart';
 import 'package:my_portfolio/Pages/components/home_page_main_container.dart';
 import 'package:my_portfolio/Pages/components/typewriter_animated_text.dart';

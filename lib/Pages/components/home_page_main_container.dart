@@ -1,8 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/Custom%20Things/custom_strings.dart';
-import 'package:my_portfolio/Custom%20Things/responsive_size.dart';
+import 'package:my_portfolio/Models/my_strings.dart';
+import 'package:my_portfolio/Models/responsive_size.dart';
 
 class HomePageMainContainer extends StatelessWidget {
   const HomePageMainContainer({
@@ -34,7 +34,7 @@ class HomePageMainContainer extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
                 child: AnimatedTextKit(
-                  animatedTexts: CustomStrings.homePageMainContents
+                  animatedTexts: MyStrings.homePageMainContents
                       .map(
                         (text) => FadeAnimatedText(
                           text,

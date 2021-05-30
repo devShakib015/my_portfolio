@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CustomStrings {
-  CustomStrings._();
+class MyStrings {
+  MyStrings._();
 
   static final List<String> keywords = ["Design", "Develop", "Debug", "Deploy"];
 
@@ -35,38 +35,41 @@ class CustomStrings {
   static final List<Map<String, dynamic>> contactButtons = [
     {
       "icon": CupertinoIcons.mail_solid,
-      "url": "mailto:${CustomStrings.myMail}",
-      "tooltip": CustomStrings.myMail,
+      "url": "mailto:${MyStrings.myMail}",
+      "tooltip": MyStrings.myMail,
     },
     {
       "icon": CupertinoIcons.phone_fill,
-      "url": "tel:${CustomStrings.myPhone}",
-      "tooltip": CustomStrings.myPhone,
+      "url": "tel:${MyStrings.myPhone}",
+      "tooltip": MyStrings.myPhone,
     },
     {
       "icon": FontAwesomeIcons.facebookMessenger,
-      "url": "https://m.me/${CustomStrings.myMessenger}/",
-      "tooltip": CustomStrings.myMessenger,
+      "url": "https://m.me/${MyStrings.myMessenger}/",
+      "tooltip": MyStrings.myMessenger,
     },
     {
       "icon": FontAwesomeIcons.whatsappSquare,
-      "url": "https://api.whatsapp.com/send?phone=${CustomStrings.myWhatsApp}",
-      "tooltip": CustomStrings.myWhatsApp,
+      "url": "https://api.whatsapp.com/send?phone=${MyStrings.myWhatsApp}",
+      "tooltip": MyStrings.myWhatsApp,
     },
     {
       "icon": FontAwesomeIcons.weixin,
-      "url": "https://weixin://contacts/profile/{${CustomStrings.myWhatsApp}}",
-      "tooltip": CustomStrings.myWechat,
+      "url": "https://weixin://contacts/profile/{${MyStrings.myWhatsApp}}",
+      "tooltip": MyStrings.myWechat,
     },
     {
       "icon": FontAwesomeIcons.facebookF,
-      "url": "https://facebook.com/${CustomStrings.myFacebook}",
-      "tooltip": CustomStrings.myFacebook,
+      "url": "https://facebook.com/${MyStrings.myFacebook}",
+      "tooltip": MyStrings.myFacebook,
     },
     {
       "icon": FontAwesomeIcons.github,
-      "url": "https://github.com/${CustomStrings.myGithub}",
-      "tooltip": CustomStrings.myGithub,
+      "url": "https://github.com/${MyStrings.myGithub}",
+      "tooltip": MyStrings.myGithub,
     }
   ];
+
+  static final String loremPara =
+      "Lorem labore amet eu ex aliquip ex fugiat. Fugiat enim et irure ullamco quis sint sint laborum adipisicing do tempor. Qui anim occaecat elit amet magna est. Ex proident culpa voluptate adipisicing amet duis. Lorem deserunt incididunt magna magna veniam aliquip Lorem. Elit minim nisi nisi proident nulla veniam commodo occaecat voluptate eiusmod non duis sint.";
 }

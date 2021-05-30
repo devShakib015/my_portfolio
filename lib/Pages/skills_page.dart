@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/Custom%20Things/my_skills.dart';
+import 'package:my_portfolio/Models/my_skills.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class SkillsPage extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/Custom%20Things/custom_colors.dart';
+import 'package:my_portfolio/Models/my_colors.dart';
 import 'package:my_portfolio/Pages/app_structure.dart';
 
 void main() {
@@ -14,17 +14,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(
-        accentColor: CustomColors.primaryColor,
-        primaryColor: CustomColors.primaryColor,
+        accentColor: MyColors.primaryColor,
+        primaryColor: MyColors.primaryColor,
         appBarTheme: AppBarTheme(
-          backgroundColor: CustomColors.primaryColor,
+          backgroundColor: MyColors.primaryColor,
         ),
         textTheme: GoogleFonts.latoTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
       title: 'devShakib | Developer',
-      color: CustomColors.primaryColor,
+      color: MyColors.primaryColor,
       home: AppStructure(),
     );
   }
