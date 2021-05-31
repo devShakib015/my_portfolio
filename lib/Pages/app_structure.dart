@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/Models/my_colors.dart';
+import 'package:my_portfolio/Models/my_images.dart';
 import 'package:my_portfolio/Models/responsive_size.dart';
 import 'package:my_portfolio/Pages/home_page.dart';
 import 'package:my_portfolio/Pages/profile_page.dart';
@@ -44,6 +45,54 @@ class _AppStructureState extends State<AppStructure> {
             width: _width,
             height: _height,
             color: MyColors.bgColors[_selectedBg],
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                padding: _width >= ResponsiveSize.tabWidth
+                    ? EdgeInsets.only(bottom: 25)
+                    : EdgeInsets.only(bottom: 10),
+                width: double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Built Using Flutter With Love   ",
+                      style: TextStyle(
+                        shadows: [
+                          Shadow(
+                            blurRadius: 5,
+                            color: MyColors.phoneColor,
+                            offset: Offset(2, 2),
+                          ),
+                        ],
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Container(
+                      width: 25,
+                      height: 25,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            spreadRadius: 1,
+                            blurRadius: 10,
+                            offset: Offset(2, 2), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Image.asset(
+                        MyImages.loveImage,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
           Padding(
             padding: _width >= ResponsiveSize.fhdWidth
@@ -182,6 +231,7 @@ class _AppStructureState extends State<AppStructure> {
                     child: Center(
                       child: Text(
                         "Not available at this aspect ratio!",
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 28,

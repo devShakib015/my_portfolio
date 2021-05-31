@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:my_portfolio/Models/my_images.dart';
 
 class ProfileImageSection extends StatelessWidget {
@@ -8,11 +9,16 @@ class ProfileImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: Image.asset(
-        MyImages.myProfileImage,
-        fit: BoxFit.cover,
+    return Material(
+      borderRadius: BorderRadius.circular(30),
+      elevation: 30,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        child: Image.asset(
+          MyImages.myProfileImage,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }

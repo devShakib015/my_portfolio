@@ -16,26 +16,29 @@ class ProfilePage extends StatelessWidget {
         padding:
             EdgeInsets.symmetric(horizontal: _responsivePadding, vertical: 20),
         child: _width >= ResponsiveSize.tabWidth
-            ? Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: SingleChildScrollView(
-                        child: ProfileDetailsSection(
-                            contactButtons: MyStrings.contactButtons)),
-                  ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: ProfileImageSection(),
+            ? Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: SingleChildScrollView(
+                          child: ProfileDetailsSection(
+                              contactButtons: MyStrings.contactButtons)),
                     ),
-                  )
-                ],
+                    SizedBox(
+                      width: 50,
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 16),
+                        child: ProfileImageSection(),
+                      ),
+                    )
+                  ],
+                ),
               )
             : SingleChildScrollView(
                 child: Column(
