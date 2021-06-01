@@ -182,6 +182,8 @@ class _AppStructureState extends State<AppStructure> {
                                     onPressed: () {
                                       setState(() {
                                         _selectedTab = 1;
+                                        _selectedBg = Random()
+                                            .nextInt(MyColors.bgColors.length);
                                       });
                                     },
                                     icon: Icon(
@@ -194,6 +196,8 @@ class _AppStructureState extends State<AppStructure> {
                                     onPressed: () {
                                       setState(() {
                                         _selectedTab = 2;
+                                        _selectedBg = Random()
+                                            .nextInt(MyColors.bgColors.length);
                                       });
                                     },
                                     icon: Icon(
@@ -206,6 +210,8 @@ class _AppStructureState extends State<AppStructure> {
                                     onPressed: () {
                                       setState(() {
                                         _selectedTab = 3;
+                                        _selectedBg = Random()
+                                            .nextInt(MyColors.bgColors.length);
                                       });
                                     },
                                     icon: Icon(
@@ -218,6 +224,8 @@ class _AppStructureState extends State<AppStructure> {
                                     onPressed: () {
                                       setState(() {
                                         _selectedTab = 4;
+                                        _selectedBg = Random()
+                                            .nextInt(MyColors.bgColors.length);
                                       });
                                     },
                                     icon: Icon(
