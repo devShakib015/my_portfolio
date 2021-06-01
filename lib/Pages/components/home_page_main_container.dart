@@ -20,30 +20,30 @@ class HomePageMainContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: _height >= ResponsiveSize.fhdHeight ? 500 : 300,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: DefaultTextStyle(
-                textAlign: TextAlign.center,
-                style: GoogleFonts.roboto(
-                  color: Colors.black54,
-                  fontSize: _width >= ResponsiveSize.tabWidth ? 60 : 40,
-                  fontWeight: FontWeight.bold,
-                ),
-                child: AnimatedTextKit(
-                  animatedTexts: MyStrings.homePageMainContents
-                      .map(
-                        (text) => FadeAnimatedText(
-                          text,
-                          textAlign: TextAlign.center,
+      child: Container(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: DefaultTextStyle(
+              textAlign: TextAlign.center,
+              style: GoogleFonts.roboto(
+                color: Colors.black54,
+                fontSize: _width >= ResponsiveSize.tabWidth ? 60 : 40,
+                fontWeight: FontWeight.bold,
+              ),
+              child: AnimatedTextKit(
+                animatedTexts: MyStrings.homePageMainContents
+                    .map(
+                      (text) => FadeAnimatedText(
+                        text,
+                        textStyle: TextStyle(
+                          wordSpacing: 2,
                         ),
-                      )
-                      .toList(),
-                  repeatForever: true,
-                ),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                    .toList(),
+                repeatForever: true,
               ),
             ),
           ),

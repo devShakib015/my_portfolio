@@ -24,6 +24,7 @@ class ProfilePage extends StatelessWidget {
                     Expanded(
                       flex: 1,
                       child: SingleChildScrollView(
+                          physics: BouncingScrollPhysics(),
                           child: ProfileDetailsSection(
                               contactButtons: MyStrings.contactButtons)),
                     ),
@@ -41,6 +42,7 @@ class ProfilePage extends StatelessWidget {
                 ),
               )
             : SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

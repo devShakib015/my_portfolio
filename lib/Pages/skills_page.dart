@@ -9,13 +9,19 @@ class SkillsPage extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(8.0),
         child: GridView.extent(
+          physics: BouncingScrollPhysics(),
           maxCrossAxisExtent: 350,
           children: MySkills.all
               .map(
                 (skill) => Padding(
                   padding: EdgeInsets.all(16.0),
                   child: Card(
-                    color: Colors.grey[100],
+                    elevation: 30,
+                    color: Colors.white,
+                    shadowColor: Colors.black54,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                     child: GridTile(
                       header: Padding(
                         padding: EdgeInsets.all(16.0),

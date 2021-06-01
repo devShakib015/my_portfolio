@@ -10,8 +10,8 @@ class PhoneContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double _phoneWidth = 285;
-    double _phoneheight = 590;
+    double _phoneWidth = 275;
+    double _phoneheight = 565;
     double _border = 15;
 
     return Center(

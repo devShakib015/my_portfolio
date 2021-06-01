@@ -11,8 +11,7 @@ class HeadingText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          EdgeInsets.symmetric(horizontal: responsivePadding, vertical: 16),
+      padding: EdgeInsets.symmetric(horizontal: responsivePadding, vertical: 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

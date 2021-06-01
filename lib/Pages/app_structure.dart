@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/Models/my_colors.dart';
@@ -8,6 +9,7 @@ import 'package:my_portfolio/Pages/home_page.dart';
 import 'package:my_portfolio/Pages/profile_page.dart';
 import 'package:my_portfolio/Pages/skills_page.dart';
 import 'package:my_portfolio/Pages/works_page.dart';
+import 'package:shimmer/shimmer.dart';
 
 class AppStructure extends StatefulWidget {
   @override
@@ -57,33 +59,25 @@ class _AppStructureState extends State<AppStructure> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      "Built Using Flutter With Love   ",
-                      style: TextStyle(
-                        shadows: [
-                          Shadow(
-                            blurRadius: 5,
-                            color: MyColors.phoneColor,
-                            offset: Offset(2, 2),
-                          ),
-                        ],
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                    Shimmer.fromColors(
+                      period: Duration(seconds: 2),
+                      baseColor: Colors.white,
+                      highlightColor:
+                          MyColors.bgColors[_selectedBg].withAlpha(200),
+                      child: Text(
+                        "Built Using Flutter With Love",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          wordSpacing: 2,
+                        ),
                       ),
                     ),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Container(
-                      width: 25,
-                      height: 25,
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black12,
-                            spreadRadius: 1,
-                            blurRadius: 10,
-                            offset: Offset(2, 2), // changes position of shadow
-                          ),
-                        ],
-                      ),
+                      width: 20,
+                      height: 20,
                       child: Image.asset(
                         MyImages.loveImage,
                         fit: BoxFit.cover,
@@ -156,7 +150,19 @@ class _AppStructureState extends State<AppStructure> {
                             ),
                           ),
                           Expanded(
-                            child: _selectTabs(),
+                            // child: _selectTabs(),
+                            child: PageTransitionSwitcher(
+                              duration: Duration(seconds: 1),
+                              transitionBuilder: (child, primaryAnimation,
+                                      secondaryAnimation) =>
+                                  FadeThroughTransition(
+                                fillColor: Colors.transparent,
+                                animation: primaryAnimation,
+                                secondaryAnimation: secondaryAnimation,
+                                child: child,
+                              ),
+                              child: _selectTabs(),
+                            ),
                           ),
                           Container(
                             height: _height >= ResponsiveSize.tabHeight

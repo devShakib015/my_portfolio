@@ -12,8 +12,10 @@ class HomePage extends StatelessWidget {
     double _responsivePadding = _width >= ResponsiveSize.mobileWidth ? 50 : 15;
     return Container(
       child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             _width >= ResponsiveSize.tabWidth
                 ? Row(

@@ -19,6 +19,7 @@ class _WorksPageState extends State<WorksPage> {
     return Stack(
       children: [
         PageView.builder(
+          physics: BouncingScrollPhysics(),
           itemCount: _itemCount,
           itemBuilder: (context, index) {
             return WorkLayout(
