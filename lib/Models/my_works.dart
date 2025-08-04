@@ -1,6 +1,6 @@
-import 'package:my_portfolio/Models/my_images.dart';
-import 'package:my_portfolio/Models/my_strings.dart';
-import 'package:my_portfolio/Models/work.dart';
+import 'package:my_portfolio/models/my_images.dart';
+import 'package:my_portfolio/models/my_strings.dart';
+import 'package:my_portfolio/models/work.dart';
 
 class MyWorks {
   MyWorks._();

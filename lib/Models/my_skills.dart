@@ -1,4 +1,4 @@
-import 'package:my_portfolio/Models/skill.dart';
+import 'package:my_portfolio/models/skill.dart';
 
 final String _path = "assets/icons";
 
