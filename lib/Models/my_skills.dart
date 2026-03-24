@@ -10,81 +10,142 @@ class MySkills {
   /// 2. Add a Skill(...) entry below with the correct image path and progress %.
   /// ──────────────────────────────────────────────────────────────────────────
   static const List<Skill> all = [
-    // Core
+    // Mobile
     Skill(
         title: 'Flutter',
         image: '$_path/icons8-flutter-480.png',
-        progress: 90,
-        category: 'Core'),
+        progress: 98,
+        category: 'Mobile'),
     Skill(
         title: 'Dart',
         image: '$_path/icons8-dart-480.png',
         progress: 98,
-        category: 'Core'),
+        category: 'Mobile'),
 
-    // Backend / Firebase
+    // Cloud & DevOps
     Skill(
         title: 'Firebase',
         image: '$_path/icons8-firebase-480.png',
+        progress: 95,
+        category: 'Cloud & DevOps'),
+    Skill(
+        title: 'Google Cloud',
+        image: '$_path/icons8-google-cloud-480.png',
         progress: 92,
+        category: 'Cloud & DevOps'),
+    Skill(
+        title: 'AWS',
+        image: '$_path/icons8-aws-480.png',
+        progress: 88,
+        category: 'Cloud & DevOps'),
+    Skill(
+        title: 'Docker',
+        image: '$_path/icons8-docker-480.png',
+        progress: 92,
+        category: 'Cloud & DevOps'),
+    Skill(
+        title: 'Kubernetes',
+        image: '$_path/icons8-kubernetes-480.png',
+        progress: 85,
+        category: 'Cloud & DevOps'),
+    Skill(
+        title: 'CI / CD',
+        image: '$_path/icons8-cicd-480.png',
+        progress: 90,
+        category: 'Cloud & DevOps'),
+
+    // AI & APIs
+    Skill(
+        title: 'AI / ML',
+        image: '$_path/icons8-ai-480.png',
+        progress: 88,
+        category: 'AI & APIs'),
+    Skill(
+        title: 'REST APIs',
+        image: '$_path/icons8-rest-api-480.png',
+        progress: 97,
+        category: 'AI & APIs'),
+    Skill(
+        title: 'GraphQL',
+        image: '$_path/icons8-graphql-480.png',
+        progress: 82,
+        category: 'AI & APIs'),
+    Skill(
+        title: 'Firebase ML',
+        image: '$_path/icons8-firebase-ml-480.png',
+        progress: 90,
+        category: 'AI & APIs'),
+
+    // Backend
+    Skill(
+        title: 'Python',
+        image: '$_path/icons8-python-480.png',
+        progress: 95,
         category: 'Backend'),
     Skill(
-        title: 'Authentication',
-        image: '$_path/icons8-authentication-480.png',
-        progress: 98,
+        title: 'Django',
+        image: '$_path/icons8-django-480.png',
+        progress: 85,
         category: 'Backend'),
+    Skill(
+        title: 'JavaScript',
+        image: '$_path/icons8-javascript-480.png',
+        progress: 80,
+        category: 'Backend'),
+
+    // Database
     Skill(
         title: 'Cloud Firestore',
         image: '$_path/icons8-cloud-firestore-480.png',
-        progress: 100,
-        category: 'Backend'),
+        progress: 99,
+        category: 'Database'),
     Skill(
         title: 'Realtime Database',
         image: '$_path/icons8-realtime-database-480.png',
         progress: 97,
-        category: 'Backend'),
+        category: 'Database'),
     Skill(
-        title: 'Firebase ML',
-        image: '$_path/icons8-firebase-ml-480.png',
+        title: 'PostgreSQL',
+        image: '$_path/icons8-postgresql-480.png',
+        progress: 92,
+        category: 'Database'),
+    Skill(
+        title: 'MySQL',
+        image: '$_path/icons8-mysql-logo-480.png',
         progress: 88,
-        category: 'Backend'),
+        category: 'Database'),
     Skill(
-        title: 'In App Messaging',
-        image: '$_path/icons8-in-app-messaging-480.png',
-        progress: 85,
-        category: 'Backend'),
-    Skill(
-        title: 'Google Cloud',
-        image: '$_path/icons8-google-cloud-480.png',
-        progress: 89,
-        category: 'Backend'),
-    Skill(
-        title: 'Google AdMob',
-        image: '$_path/icons8-google-admob-480.png',
-        progress: 93,
-        category: 'Backend'),
+        title: 'MongoDB',
+        image: '$_path/icons8-mongodb-480.png',
+        progress: 87,
+        category: 'Database'),
 
-    // Languages
+    // Tools & Leadership
     Skill(
-        title: 'Python',
-        image: '$_path/icons8-python-480.png',
+        title: 'Git',
+        image: '$_path/icons8-git-480.png',
+        progress: 97,
+        category: 'Tools & Leadership'),
+    Skill(
+        title: 'GitHub',
+        image: '$_path/icons8-github-480.png',
         progress: 99,
-        category: 'Languages'),
+        category: 'Tools & Leadership'),
     Skill(
-        title: 'Django',
-        image: '$_path/icons8-django-480.png',
-        progress: 80,
-        category: 'Languages'),
+        title: 'Testing & QA',
+        image: '$_path/icons8-testing-480.png',
+        progress: 92,
+        category: 'Tools & Leadership'),
     Skill(
-        title: 'Java',
-        image: '$_path/icons8-java-480.png',
-        progress: 81,
-        category: 'Languages'),
+        title: 'Project Mgmt',
+        image: '$_path/icons8-project-mgmt-480.png',
+        progress: 95,
+        category: 'Tools & Leadership'),
     Skill(
-        title: 'Ruby',
-        image: '$_path/icons8-ruby-programming-language-480.png',
-        progress: 80,
-        category: 'Languages'),
+        title: 'Authentication',
+        image: '$_path/icons8-authentication-480.png',
+        progress: 98,
+        category: 'Tools & Leadership'),
 
     // Web
     Skill(
@@ -97,64 +158,5 @@ class MySkills {
         image: '$_path/icons8-css3-480.png',
         progress: 93,
         category: 'Web'),
-    Skill(
-        title: 'JavaScript',
-        image: '$_path/icons8-javascript-480.png',
-        progress: 75,
-        category: 'Web'),
-    Skill(
-        title: 'WordPress',
-        image: '$_path/icons8-wordpress-480.png',
-        progress: 84,
-        category: 'Web'),
-
-    // Databases
-    Skill(
-        title: 'MySQL',
-        image: '$_path/icons8-mysql-logo-480.png',
-        progress: 89,
-        category: 'Database'),
-    Skill(
-        title: 'PostgreSQL',
-        image: '$_path/icons8-postgresql-480.png',
-        progress: 90,
-        category: 'Database'),
-    Skill(
-        title: 'MongoDB',
-        image: '$_path/icons8-mongodb-480.png',
-        progress: 85,
-        category: 'Database'),
-    Skill(
-        title: 'GraphQL',
-        image: '$_path/icons8-graphql-480.png',
-        progress: 76,
-        category: 'Database'),
-
-    // Tools
-    Skill(
-        title: 'Git',
-        image: '$_path/icons8-git-480.png',
-        progress: 96,
-        category: 'Tools'),
-    Skill(
-        title: 'GitHub',
-        image: '$_path/icons8-github-480.png',
-        progress: 99,
-        category: 'Tools'),
-    Skill(
-        title: 'cPanel',
-        image: '$_path/icons8-cpanel-480.png',
-        progress: 88,
-        category: 'Tools'),
-    Skill(
-        title: 'Heroku',
-        image: '$_path/icons8-heroku-480.png',
-        progress: 78,
-        category: 'Tools'),
-    Skill(
-        title: 'Kali Linux',
-        image: '$_path/icons8-kali-linux-480.png',
-        progress: 70,
-        category: 'Tools'),
   ];
 }

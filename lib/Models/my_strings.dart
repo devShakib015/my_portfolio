@@ -19,17 +19,17 @@ class MyStrings {
   ];
 
   static final String myName = "Hossain K M Shahriar";
-  static final String myTagLine = "Software Developer, YZU-CHINA, 2021";
+  static final String myTagLine = "CTO & Co-founder · Flutter · Cloud · AI";
   static final String myDescription = '''
-After over six years in the software development industry, I can confidently say I’ve found my stride—both technically and creatively. My journey began with Python and its diverse ecosystem of frameworks, where I built data-driven applications and honed my backend expertise. However, everything changed when I discovered Flutter while exploring options for my graduation project. What started as a tool quickly became a passion—and eventually, my specialty.
+Over six years of shipping production software have taken me from writing my first Python scripts to leading enterprise-scale engineering teams as a CTO. Flutter became my primary craft early on, and today I engineer full-stack, cloud-native systems at the intersection of mobile, AI, and infrastructure.
 
-Over the past few years, Flutter has transformed the way I approach product development. Its expressive UI capabilities, cross-platform flexibility, and developer-friendly architecture have empowered me to build scalable, high-performance apps with precision and speed. From designing pixel-perfect interfaces to architecting clean and maintainable codebases, I’ve developed a deep appreciation for the balance between frontend elegance and robust backend systems.
+Flutter & Firebase are the core of my craft. I've built and launched a dozen production apps — from real-time fintech dashboards to social platforms — architecting everything from Firestore data models and Firebase ML pipelines to push notifications and in-app monetization. When the backend needs more muscle, I design REST APIs and GraphQL services that integrate cleanly with any client.
 
-As the current CTO and co-founder of Shpper, a Dubai-based tech startup, I lead the technical vision and oversee the development of our core platform, leveraging Flutter as the foundation for our mobile experience. My role spans product strategy, code quality enforcement, team leadership, and long-term scalability planning. Prior to this, I was involved in multiple freelance and startup projects where I delivered full-stack solutions, mentored junior developers, and collaborated cross-functionally to bring complex ideas to life.
+Cloud & DevOps are where modern engineering happens. I run production workloads on both Google Cloud Platform and AWS, containerize with Docker, orchestrate with Kubernetes, and build zero-downtime CI/CD pipelines that cut deploy cycles from days to minutes. Automated testing suites and robust monitoring are non-negotiables in everything I ship.
 
-What sets me apart is not just my proficiency in Flutter or Python, but my mindset—an engineer’s curiosity combined with a founder’s resilience. The years of uncertainty and self-doubt I once faced have shaped me into a confident and adaptive professional who thrives in fast-paced, goal-driven environments.
+AI integration is now part of every product I build. I embed machine learning into mobile and web experiences — from on-device inference to LLM-powered features — and leverage Firebase ML and cloud AI services to deliver intelligent, context-aware applications that stand apart.
 
-Flutter is more than just a tool in my stack—it’s where I do my best work. And I’m always pushing to master it further, explore its depths, and build things that matter.
+As CTO and Co-founder of Shpper, a Dubai-based tech startup, I lead a distributed team of 20+ engineers across multiple time zones. I drive technical vision, enforce architecture standards, manage enterprise delivery roadmaps, and mentor the next generation of developers. The best engineers are also great communicators and leaders — and I strive to be both.
 ''';
   static final String myMail = "devshakib015@gmail.com";
   static final String myPhone = "+8801710265421";
