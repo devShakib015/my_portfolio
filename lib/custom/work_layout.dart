@@ -11,13 +11,13 @@ class WorkLayout extends StatelessWidget {
   final String desc;
   final double width;
   const WorkLayout({
-    Key? key,
+    super.key,
     required this.image,
     required this.title,
     required this.tagline,
     required this.desc,
     required this.width,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

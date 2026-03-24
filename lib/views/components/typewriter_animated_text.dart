@@ -10,6 +10,8 @@ final TextStyle _textStyle = GoogleFonts.lobsterTwo(
 );
 
 class TypewriterAnimatedTextHome extends StatelessWidget {
+  const TypewriterAnimatedTextHome({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(

@@ -4,15 +4,15 @@ import 'package:my_portfolio/models/my_colors.dart';
 class PhoneContainer extends StatelessWidget {
   final String image;
   const PhoneContainer({
-    Key? key,
+    super.key,
     required this.image,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    double _phoneWidth = 275;
-    double _phoneheight = 565;
-    double _border = 15;
+    double phoneWidth = 275;
+    double phoneheight = 565;
+    double border = 15;
 
     return Center(
       child: Padding(
@@ -21,13 +21,13 @@ class PhoneContainer extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.only(right: 3),
-              width: _phoneWidth,
-              height: _phoneheight,
+              width: phoneWidth,
+              height: phoneheight,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  width: _border,
+                  width: border,
                   color: MyColors.phoneColor,
                 ),
                 boxShadow: [
@@ -43,11 +43,11 @@ class PhoneContainer extends StatelessWidget {
                 children: [
                   //Image
                   Positioned(
-                    top: _border * 2,
-                    bottom: _border * 1.5,
+                    top: border * 2,
+                    bottom: border * 1.5,
                     child: Container(
-                      width: _phoneWidth - _border * 2,
-                      height: _phoneheight - _border * 3.5,
+                      width: phoneWidth - border * 2,
+                      height: phoneheight - border * 3.5,
                       color: MyColors.phoneColor,
                       child: Image.asset(
                         image,
@@ -60,8 +60,8 @@ class PhoneContainer extends StatelessWidget {
                   //Top Border
                   Positioned(
                     child: Container(
-                      width: _phoneWidth,
-                      height: _border * 2,
+                      width: phoneWidth,
+                      height: border * 2,
                       color: MyColors.phoneColor,
                     ),
                   ),
@@ -98,8 +98,8 @@ class PhoneContainer extends StatelessWidget {
                   Positioned(
                     bottom: 0,
                     child: Container(
-                      width: _phoneWidth,
-                      height: _border * 1.5,
+                      width: phoneWidth,
+                      height: border * 1.5,
                       color: MyColors.phoneColor,
                     ),
                   ),
@@ -107,15 +107,15 @@ class PhoneContainer extends StatelessWidget {
               ),
             ),
             PhoneButton(
-              border: _border,
+              border: border,
               position: 6,
             ),
             PhoneButton(
-              border: _border,
+              border: border,
               position: 10,
             ),
             PhoneButton(
-              border: _border,
+              border: border,
               position: 15,
             ),
           ],
@@ -127,12 +127,11 @@ class PhoneContainer extends StatelessWidget {
 
 class PhoneButton extends StatelessWidget {
   const PhoneButton({
-    Key? key,
+    super.key,
     required double border,
     required int position,
   })  : _border = border,
-        _position = position,
-        super(key: key);
+        _position = position;
 
   final double _border;
   final int _position;

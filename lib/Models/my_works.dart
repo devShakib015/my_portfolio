@@ -1,64 +1,68 @@
 import 'package:my_portfolio/models/my_images.dart';
-import 'package:my_portfolio/models/my_strings.dart';
 import 'package:my_portfolio/models/work.dart';
 
 class MyWorks {
   MyWorks._();
 
   static final List<Work> all = [
-    //Quaksha App
-    for (var i = 0; i < MyImages.quaksha.length; i++)
-      Work(
-        title: "Online Educational Platform",
-        tagline: "Built using API Integration [REST API]",
-        desc: MyStrings.loremPara,
-        image: MyImages.quaksha[i],
-      ),
-
-    //Ecommerce App
-    for (var i = 0; i < MyImages.ecommerce.length; i++)
-      Work(
-        title: "E-Commerce App",
-        tagline:
-            "Fully Functional app backed by Firebase [Authentication, Firestore and Storage]",
-        desc: MyStrings.loremPara,
-        image: MyImages.ecommerce[i],
-      ),
-
-    //Coin Tracker App
-    for (var i = 0; i < MyImages.bmi.length; i++)
-      Work(
-        title: "BMI Calculator",
-        tagline: "Simple app design got from Dribble",
-        desc: MyStrings.loremPara,
-        image: MyImages.bmi[i],
-      ),
-
-    //Coin Tracker App
-    for (var i = 0; i < MyImages.coin.length; i++)
-      Work(
-        title: "Coin Tracker",
-        tagline: "Simple app design came out of my mind",
-        desc: MyStrings.loremPara,
-        image: MyImages.coin[i],
-      ),
-
-    //WB
-    for (var i = 0; i < MyImages.wb.length; i++)
-      Work(
-        title: "Online Earning App",
-        tagline: "A Big project backed by Firebase",
-        desc: MyStrings.loremPara,
-        image: MyImages.wb[i],
-      ),
-
-    //WB
-    for (var i = 0; i < MyImages.msw.length; i++)
-      Work(
-        title: "Movie and Series Wiki",
-        tagline: "Simple App to get Media Infos using API integration",
-        desc: MyStrings.loremPara,
-        image: MyImages.msw[i],
-      ),
+    Work(
+      title: 'Quaksha',
+      category: 'Mobile App',
+      tagline: 'Live tutoring & course platform with REST API integration',
+      desc: 'A full-featured online educational platform enabling students to '
+          'discover courses, attend live sessions, and track their learning '
+          'progress. Built with a clean UI and seamless REST API integration.',
+      screenshots: MyImages.quaksha,
+      tags: ['Flutter', 'Dart', 'REST API', 'Firebase'],
+    ),
+    Work(
+      title: 'E-Commerce App',
+      category: 'Mobile App',
+      tagline: 'Full-stack shopping app backed by Firebase',
+      desc: 'A fully functional e-commerce application with product listings, '
+          'cart management, user authentication, and real-time order tracking '
+          '— powered by Firebase Authentication, Firestore, and Storage.',
+      screenshots: MyImages.ecommerce,
+      tags: ['Flutter', 'Firebase', 'Firestore', 'Cloud Storage'],
+    ),
+    Work(
+      title: 'BMI Calculator',
+      category: 'Health & Fitness',
+      tagline: 'Elegant health tracker inspired by Dribbble',
+      desc: 'A minimal and elegant BMI calculator featuring smooth animations '
+          'and an intuitive interface designed from a Dribbble concept.',
+      screenshots: MyImages.bmi,
+      tags: ['Flutter', 'Dart', 'UI/UX'],
+    ),
+    Work(
+      title: 'Coin Tracker',
+      category: 'Finance',
+      tagline: 'Real-time cryptocurrency price tracker',
+      desc:
+          'A sleek crypto tracking app displaying live coin prices and market '
+          'movements with fully custom UI components.',
+      screenshots: MyImages.coin,
+      tags: ['Flutter', 'Dart', 'API Integration'],
+    ),
+    Work(
+      title: 'Online Earning App',
+      category: 'Mobile App',
+      tagline: 'Large-scale earning platform backed by Firebase',
+      desc: 'A comprehensive online earning platform with task management, '
+          'wallet system, and reward tracking backed by a full Firebase backend '
+          'with real-time updates.',
+      screenshots: MyImages.wb,
+      tags: ['Flutter', 'Firebase', 'Cloud Functions', 'Firestore'],
+    ),
+    Work(
+      title: 'Movie & Series Wiki',
+      category: 'Entertainment',
+      tagline: 'Browse media info with TMDB API integration',
+      desc: 'A movie and TV series discovery app fetching real-time data from '
+          'TMDB API. Browse trending content, view ratings, read synopses, '
+          'and explore cast details.',
+      screenshots: MyImages.msw,
+      tags: ['Flutter', 'Dart', 'REST API', 'TMDB'],
+    ),
   ];
 }

@@ -1,7 +1,13 @@
 class Skill {
-  String title;
-  String image;
-  double progress;
+  final String title;
+  final String image;
+  final double progress;
+  final String category;
 
-  Skill({required this.title, required this.image, required this.progress});
+  const Skill({
+    required this.title,
+    required this.image,
+    required this.progress,
+    this.category = 'Other',
+  });
 }

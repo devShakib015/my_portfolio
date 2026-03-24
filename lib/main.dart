@@ -1,26 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/models/my_colors.dart';
-import 'package:my_portfolio/views/app_structure.dart';
+import 'package:my_portfolio/theme/app_colors.dart';
+import 'package:my_portfolio/views/portfolio_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(useMaterial3: false).copyWith(
-        primaryColor: MyColors.primaryColor,
-        appBarTheme: AppBarTheme(backgroundColor: MyColors.primaryColor),
-        textTheme: GoogleFonts.nunitoTextTheme(Theme.of(context).textTheme),
+      title: 'K M Shahriar Hossain — Flutter Developer & CTO',
+      theme: ThemeData.dark(useMaterial3: false).copyWith(
+        scaffoldBackgroundColor: AppColors.background,
+        primaryColor: AppColors.accent,
+        textTheme: GoogleFonts.interTextTheme(
+          Theme.of(context).textTheme.apply(
+                bodyColor: AppColors.textPrimary,
+                displayColor: AppColors.textPrimary,
+              ),
+        ),
       ),
-      title: 'K M Shahriar Hossain - Software Developer',
-      color: MyColors.primaryColor,
-      home: AppStructure(),
+      home: const PortfolioPage(),
     );
   }
 }

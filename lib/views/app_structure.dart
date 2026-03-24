@@ -12,8 +12,10 @@ import 'package:my_portfolio/views/works_page.dart';
 import 'package:shimmer/shimmer.dart';
 
 class AppStructure extends StatefulWidget {
+  const AppStructure({super.key});
+
   @override
-  _AppStructureState createState() => _AppStructureState();
+  State<AppStructure> createState() => _AppStructureState();
 }
 
 class _AppStructureState extends State<AppStructure> {
@@ -27,14 +29,15 @@ class _AppStructureState extends State<AppStructure> {
       return SkillsPage();
     } else if (_selectedTab == 3) {
       return WorksPage();
-    } else
+    } else {
       return ProfilePage();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
-    double _height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       //Backgroud Color
@@ -44,13 +47,13 @@ class _AppStructureState extends State<AppStructure> {
           AnimatedContainer(
             duration: Duration(seconds: 1),
             curve: Curves.easeInBack,
-            width: _width,
-            height: _height,
+            width: width,
+            height: height,
             color: MyColors.bgColors[_selectedBg],
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                padding: _width >= ResponsiveSize.tabWidth
+                padding: width >= ResponsiveSize.tabWidth
                     ? EdgeInsets.only(bottom: 25)
                     : EdgeInsets.only(bottom: 10),
                 width: double.infinity,
@@ -75,7 +78,7 @@ class _AppStructureState extends State<AppStructure> {
                     SizedBox(
                       width: 5,
                     ),
-                    Container(
+                    SizedBox(
                       width: 20,
                       height: 24,
                       child: Image.asset(
@@ -89,19 +92,19 @@ class _AppStructureState extends State<AppStructure> {
             ),
           ),
           Padding(
-            padding: _width >= ResponsiveSize.fhdWidth
+            padding: width >= ResponsiveSize.fhdWidth
                 ? const EdgeInsets.symmetric(horizontal: 200, vertical: 80)
-                : (_width >= ResponsiveSize.hdWidth
+                : (width >= ResponsiveSize.hdWidth
                     ? const EdgeInsets.symmetric(horizontal: 160, vertical: 80)
-                    : (_width >= ResponsiveSize.normalWidth
+                    : (width >= ResponsiveSize.normalWidth
                         ? const EdgeInsets.symmetric(
                             horizontal: 120, vertical: 80)
-                        : (_width >= ResponsiveSize.tabWidth
+                        : (width >= ResponsiveSize.tabWidth
                             ? const EdgeInsets.symmetric(
                                 horizontal: 60, vertical: 60)
                             : const EdgeInsets.symmetric(
                                 horizontal: 25, vertical: 40)))),
-            child: _height >= 540
+            child: height >= 540
                 ? Card(
                     color: Colors.white,
                     elevation: 20,
@@ -115,7 +118,7 @@ class _AppStructureState extends State<AppStructure> {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 6, vertical: 10),
                             child: Align(
-                              alignment: _width >= ResponsiveSize.tabWidth
+                              alignment: width >= ResponsiveSize.tabWidth
                                   ? Alignment.centerRight
                                   : Alignment.center,
                               child: Wrap(
@@ -164,12 +167,12 @@ class _AppStructureState extends State<AppStructure> {
                               child: _selectTabs(),
                             ),
                           ),
-                          Container(
-                            height: _height >= ResponsiveSize.tabHeight
-                                ? _height * 0.09
-                                : _height * 0.12,
+                          SizedBox(
+                            height: height >= ResponsiveSize.tabHeight
+                                ? height * 0.09
+                                : height * 0.12,
                             width:
-                                _width >= ResponsiveSize.tabWidth ? 300 : null,
+                                width >= ResponsiveSize.tabWidth ? 300 : null,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Row(
@@ -241,16 +244,14 @@ class _AppStructureState extends State<AppStructure> {
                       ),
                     ),
                   )
-                : Container(
-                    child: Center(
-                      child: Text(
-                        "Not available at this aspect ratio!",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                        ),
+                : Center(
+                    child: Text(
+                      "Not available at this aspect ratio!",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),

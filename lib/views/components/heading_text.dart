@@ -4,9 +4,9 @@ import 'package:my_portfolio/models/my_strings.dart';
 class HeadingText extends StatelessWidget {
   final double responsivePadding;
   const HeadingText({
-    Key? key,
+    super.key,
     required this.responsivePadding,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

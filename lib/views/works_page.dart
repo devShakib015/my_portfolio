@@ -4,17 +4,19 @@ import 'package:my_portfolio/models/my_works.dart';
 import 'package:my_portfolio/models/responsive_size.dart';
 
 class WorksPage extends StatefulWidget {
+  const WorksPage({super.key});
+
   @override
-  _WorksPageState createState() => _WorksPageState();
+  State<WorksPage> createState() => _WorksPageState();
 }
 
 class _WorksPageState extends State<WorksPage> {
-  int _itemCount = MyWorks.all.length;
+  final int _itemCount = MyWorks.all.length;
   int _currentWork = 1;
 
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
 
     return Stack(
       children: [
@@ -23,7 +25,7 @@ class _WorksPageState extends State<WorksPage> {
           itemCount: _itemCount,
           itemBuilder: (context, index) {
             return WorkLayout(
-              width: _width,
+              width: width,
               desc: MyWorks.all[index].desc,
               tagline: MyWorks.all[index].tagline,
               image: MyWorks.all[index].image,
@@ -37,14 +39,14 @@ class _WorksPageState extends State<WorksPage> {
           },
         ),
         Positioned(
-          bottom: _width >= ResponsiveSize.normalWidth
+          bottom: width >= ResponsiveSize.normalWidth
               ? 50
-              : _width >= ResponsiveSize.mobileWidth
+              : width >= ResponsiveSize.mobileWidth
                   ? 30
                   : 10,
-          right: _width >= ResponsiveSize.normalWidth
+          right: width >= ResponsiveSize.normalWidth
               ? 150
-              : _width >= ResponsiveSize.mobileWidth
+              : width >= ResponsiveSize.mobileWidth
                   ? 80
                   : 20,
           child: Card(
