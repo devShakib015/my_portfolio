@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -117,7 +119,7 @@ class _HeroText extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                'Flutter Developer  ·  CTO',
+                MyStrings.tagLine,
                 style: AppTypography.caption.copyWith(
                   color: AppColors.accent,
                   fontSize: 12,
@@ -134,7 +136,8 @@ class _HeroText extends StatelessWidget {
         const SizedBox(height: 22),
 
         // Name
-        Text("Hey, I'm Shakib.", style: AppTypography.display(displaySize))
+        Text("Hey, ${MyStrings.headLine}.",
+                style: AppTypography.display(displaySize))
             .animate()
             .fadeIn(duration: 700.ms, delay: 400.ms)
             .slideY(begin: 0.3, end: 0, duration: 700.ms, delay: 400.ms),
@@ -174,9 +177,9 @@ class _HeroText extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 520),
           child: Text(
-            'CTO & co-founder building digital products with Flutter. '
-            '6+ years crafting mobile, web, and cross-platform experiences '
-            'that are fast, beautiful, and maintainable.',
+            'CTO of Shpper — building the future of logistics & '
+            'e-commerce with Flutter, Firebase, and Cloud. Explore 6+ years '
+            'of production work below.',
             style: AppTypography.body,
           ),
         )
@@ -192,7 +195,10 @@ class _HeroText extends StatelessWidget {
           runSpacing: 12,
           children: [
             _PrimaryButton(label: 'View My Work', onTap: onViewWork),
-            _OutlineButton(label: "Let's Talk", onTap: onContact),
+            _OutlineButton(
+                label: 'GitHub',
+                onTap: () => MyUrl.launchURL(
+                    'https://github.com/${MyStrings.myGithub}')),
           ],
         )
             .animate()
@@ -208,86 +214,216 @@ class _HeroText extends StatelessWidget {
   }
 }
 
-class _HeroDecoration extends StatelessWidget {
+class _HeroDecoration extends StatefulWidget {
   const _HeroDecoration();
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        width: 340,
-        height: 340,
-        child: Stack(
-          alignment: Alignment.center,
+  State<_HeroDecoration> createState() => _HeroDecorationState();
+}
+
+class _HeroDecorationState extends State<_HeroDecoration>
+    with TickerProviderStateMixin {
+  late final AnimationController _c1; // inner  — 8s clockwise
+  late final AnimationController _c2; // middle — 14s counter-clockwise
+  late final AnimationController _c3; // outer  — 22s clockwise
+  late final AnimationController _pulse;
+
+  @override
+  void initState() {
+    super.initState();
+    _c1 = AnimationController(vsync: this, duration: const Duration(seconds: 8))
+      ..repeat();
+    _c2 =
+        AnimationController(vsync: this, duration: const Duration(seconds: 14))
+          ..repeat();
+    _c3 =
+        AnimationController(vsync: this, duration: const Duration(seconds: 22))
+          ..repeat();
+    _pulse = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 2200))
+      ..repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _c1.dispose();
+    _c2.dispose();
+    _c3.dispose();
+    _pulse.dispose();
+    super.dispose();
+  }
+
+  Widget _ring(double radius, double opacity) {
+    final d = radius * 2;
+    return Container(
+      width: d,
+      height: d,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: AppColors.accent.withAlpha((opacity * 255).toInt()),
+          width: 1,
+        ),
+      ),
+    );
+  }
+
+  Widget _node(String label, IconData icon, Color color, double x, double y) {
+    return Positioned(
+      left: x - 36,
+      top: y - 16,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
+        decoration: BoxDecoration(
+          color: const Color(0xFF0E0E1A),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: color.withAlpha(160), width: 1),
+          boxShadow: [
+            BoxShadow(
+                color: color.withAlpha(80), blurRadius: 12, spreadRadius: 0),
+          ],
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              width: 310,
-              height: 310,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [
-                    AppColors.accent.withAlpha(38),
-                    Colors.transparent,
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              width: 270,
-              height: 270,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: AppColors.accent.withAlpha(51),
-                  width: 1.5,
-                ),
-              ),
-            ),
-            Container(
-              width: 210,
-              height: 210,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: AppColors.accentSecondary.withAlpha(38),
-                  width: 1,
-                ),
-              ),
-            ),
-            // Center glowing icon
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: AppColors.accentGradient,
-                boxShadow: const [
-                  BoxShadow(
-                    color: AppColors.accentGlow,
-                    blurRadius: 32,
-                    spreadRadius: 4,
-                  ),
-                ],
-              ),
-              child: const Center(
-                child: Icon(
-                  Icons.code_rounded,
-                  color: Colors.white,
-                  size: 42,
-                ),
+            Icon(icon, size: 11, color: color),
+            const SizedBox(width: 4),
+            Text(
+              label,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 9.5,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 0.2,
               ),
             ),
           ],
         ),
-      ).animate().fadeIn(duration: 1000.ms, delay: 600.ms).scale(
-            begin: const Offset(0.82, 0.82),
-            end: const Offset(1, 1),
-            duration: 1000.ms,
-            delay: 600.ms,
-            curve: Curves.easeOutBack,
-          ),
+      ),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    const double sz = 420;
+    const double cx = sz / 2;
+    const double cy = sz / 2;
+
+    return Center(
+      child: SizedBox(
+        width: sz,
+        height: sz,
+        child: AnimatedBuilder(
+          animation: Listenable.merge([_c1, _c2, _c3, _pulse]),
+          builder: (_, __) {
+            final a1 = _c1.value * 2 * math.pi;
+            final a2 = -_c2.value * 2 * math.pi; // counter-clockwise
+            final a3 = _c3.value * 2 * math.pi;
+            final pv = _pulse.value;
+
+            return Stack(
+              alignment: Alignment.center,
+              children: [
+                // Ambient radial glow
+                Container(
+                  width: 340,
+                  height: 340,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: RadialGradient(colors: [
+                      AppColors.accent.withAlpha(14),
+                      Colors.transparent,
+                    ]),
+                  ),
+                ),
+                // Orbit rings
+                _ring(85, 0.28),
+                _ring(135, 0.18),
+                _ring(172, 0.11),
+
+                // ── Inner orbit (clockwise): Flutter, Dart ──
+                _node('Flutter', Icons.phone_android_rounded, AppColors.accent,
+                    cx + 85 * math.cos(a1), cy + 85 * math.sin(a1)),
+                _node(
+                    'Dart',
+                    Icons.code_rounded,
+                    AppColors.accentSecondary,
+                    cx + 85 * math.cos(a1 + math.pi),
+                    cy + 85 * math.sin(a1 + math.pi)),
+
+                // ── Middle orbit (counter-clockwise): Firebase, AWS, CI/CD ──
+                _node(
+                    'Firebase',
+                    Icons.local_fire_department_rounded,
+                    const Color(0xFFFF7043),
+                    cx + 135 * math.cos(a2),
+                    cy + 135 * math.sin(a2)),
+                _node(
+                    'AWS',
+                    Icons.cloud_rounded,
+                    const Color(0xFFFF9800),
+                    cx + 135 * math.cos(a2 + 2 * math.pi / 3),
+                    cy + 135 * math.sin(a2 + 2 * math.pi / 3)),
+                _node(
+                    'CI/CD',
+                    Icons.loop_rounded,
+                    AppColors.accent,
+                    cx + 135 * math.cos(a2 + 4 * math.pi / 3),
+                    cy + 135 * math.sin(a2 + 4 * math.pi / 3)),
+
+                // ── Outer orbit (clockwise): AI/ML, DevOps, GCP ──
+                _node(
+                    'AI / ML',
+                    Icons.psychology_rounded,
+                    const Color(0xFF00D4AA),
+                    cx + 172 * math.cos(a3 + math.pi / 6),
+                    cy + 172 * math.sin(a3 + math.pi / 6)),
+                _node(
+                    'DevOps',
+                    Icons.settings_outlined,
+                    AppColors.accentSecondary,
+                    cx + 172 * math.cos(a3 + math.pi / 6 + 2 * math.pi / 3),
+                    cy + 172 * math.sin(a3 + math.pi / 6 + 2 * math.pi / 3)),
+                _node(
+                    'GCP',
+                    Icons.storage_rounded,
+                    const Color(0xFF4FC3F7),
+                    cx + 172 * math.cos(a3 + math.pi / 6 + 4 * math.pi / 3),
+                    cy + 172 * math.sin(a3 + math.pi / 6 + 4 * math.pi / 3)),
+
+                // ── Center node ──
+                Container(
+                  width: 74,
+                  height: 74,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: AppColors.accentGradient,
+                    boxShadow: [
+                      BoxShadow(
+                        color:
+                            AppColors.accent.withAlpha((pv * 110 + 55).toInt()),
+                        blurRadius: 22 + pv * 14,
+                        spreadRadius: 3,
+                      ),
+                    ],
+                  ),
+                  child: const Center(
+                    child: Icon(Icons.terminal_rounded,
+                        color: Colors.white, size: 28),
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
+      ),
+    ).animate().fadeIn(duration: 1000.ms, delay: 600.ms).scale(
+          begin: const Offset(0.82, 0.82),
+          end: const Offset(1, 1),
+          duration: 1000.ms,
+          delay: 600.ms,
+          curve: Curves.easeOutBack,
+        );
   }
 }
 

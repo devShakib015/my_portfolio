@@ -5,7 +5,9 @@ import 'package:my_portfolio/views/sections/contact_section.dart';
 import 'package:my_portfolio/views/sections/hero_section.dart';
 import 'package:my_portfolio/views/sections/skills_section.dart';
 import 'package:my_portfolio/views/sections/works_section.dart';
+import 'package:my_portfolio/widgets/marquee_strip.dart';
 import 'package:my_portfolio/widgets/navbar.dart';
+import 'package:my_portfolio/models/my_strings.dart';
 
 class PortfolioPage extends StatefulWidget {
   const PortfolioPage({super.key});
@@ -107,6 +109,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                   onViewWork: () => _scrollToSection(NavSection.works),
                   onContact: () => _scrollToSection(NavSection.contact),
                 ),
+                MarqueeStrip(items: MyStrings.homePageMainContents),
                 AboutSection(key: _aboutKey),
                 SkillsSection(key: _skillsKey),
                 WorksSection(key: _worksKey),

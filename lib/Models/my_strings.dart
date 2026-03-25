@@ -6,11 +6,11 @@ class MyStrings {
 
   static final List<String> keywords = ["Flutter", "Cloud", "AI", "DevOps"];
 
-  // static final String headLine = "I'm Shakib";
+  static final String headLine = "I'm Shakib";
   static final String tagLine = "CTO · Engineer · Builder";
 
   static final List<String> homePageMainContents = [
-    "CTO & Co-founder @ Shpper",
+    "CTO @ Shpper",
     "6+ years building production apps",
     "Flutter · Firebase · Cloud · AI",
     "Leading 20+ engineers at Shpper Dubai",
@@ -20,6 +20,7 @@ class MyStrings {
 
   static final String myName = "Hossain K M Shahriar";
   static final String myTagLine = "CTO · Flutter · Cloud · AI";
+
   static final String myDescription = '''
 Over six years of shipping production software have taken me from writing my first Python scripts to leading enterprise-scale engineering teams as a CTO. Flutter became my primary craft early on, and today I engineer full-stack, cloud-native systems at the intersection of mobile, AI, and infrastructure.
 
@@ -29,7 +30,7 @@ Cloud & DevOps are where modern engineering happens. I run production workloads 
 
 AI integration is now part of every product I build. I embed machine learning into mobile and web experiences — from on-device inference to LLM-powered features — and leverage Firebase ML and cloud AI services to deliver intelligent, context-aware applications that stand apart.
 
-As CTO and Co-founder of Shpper, a Dubai-based tech startup, I lead a distributed team of 20+ engineers across multiple time zones. I drive technical vision, enforce architecture standards, manage enterprise delivery roadmaps, and mentor the next generation of developers. The best engineers are also great communicators and leaders — and I strive to be both.
+As CTO of Shpper, a Dubai-based tech startup, I lead a distributed team of 20+ engineers across multiple time zones. I drive technical vision, enforce architecture standards, manage enterprise delivery roadmaps, and mentor the next generation of developers. The best engineers are also great communicators and leaders — and I strive to be both.
 ''';
   static final String myMail = "devshakib015@gmail.com";
   static final String myPhone = "+8801710265421";

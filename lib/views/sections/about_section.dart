@@ -63,7 +63,7 @@ class _AboutText extends StatelessWidget {
       children: [
         const SectionHeading(
           label: 'About Me',
-          title: 'Crafting digital\nproducts with passion.',
+          title: 'Engineering at scale,\nleading with vision.',
         ),
         const SizedBox(height: 24),
         Text(MyStrings.myDescription, style: AppTypography.body),
@@ -111,59 +111,138 @@ class _Stat extends StatelessWidget {
   }
 }
 
-class _ProfileImageWidget extends StatelessWidget {
+class _ProfileImageWidget extends StatefulWidget {
+  @override
+  State<_ProfileImageWidget> createState() => _ProfileImageWidgetState();
+}
+
+class _ProfileImageWidgetState extends State<_ProfileImageWidget>
+    with TickerProviderStateMixin {
+  late final AnimationController _floatCtrl;
+  late final AnimationController _glowCtrl;
+  late final Animation<double> _floatAnim;
+  late final Animation<double> _glowAnim;
+
+  @override
+  void initState() {
+    super.initState();
+    _floatCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 4000),
+    )..repeat(reverse: true);
+
+    _glowCtrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 2800),
+    )..repeat(reverse: true);
+
+    _floatAnim = Tween<double>(begin: -8, end: 8).animate(
+      CurvedAnimation(parent: _floatCtrl, curve: Curves.easeInOut),
+    );
+    _glowAnim = Tween<double>(begin: 0.4, end: 0.85).animate(
+      CurvedAnimation(parent: _glowCtrl, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _floatCtrl.dispose();
+    _glowCtrl.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: SizedBox(
-        width: 320,
-        height: 340,
-        child: Stack(
-          children: [
-            Positioned(
-              bottom: -16,
-              right: -16,
-              child: Container(
-                width: 140,
-                height: 140,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: RadialGradient(
-                    colors: [
-                      AppColors.accentGlow,
-                      Colors.transparent,
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            // Gradient border frame
-            Container(
-              width: 300,
-              height: 340,
-              decoration: BoxDecoration(
-                gradient: AppColors.accentGradient,
-                borderRadius: BorderRadius.circular(24),
-              ),
-              padding: const EdgeInsets.all(2.5),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(22),
-                child: Image.asset(
-                  MyImages.myProfileImage,
-                  fit: BoxFit.cover,
-                  errorBuilder: (_, __, ___) => Container(
-                    color: AppColors.card,
-                    child: const Icon(
-                      Icons.person_rounded,
-                      color: AppColors.textMuted,
-                      size: 80,
+      child: AnimatedBuilder(
+        animation: Listenable.merge([_floatAnim, _glowAnim]),
+        builder: (_, __) {
+          return Transform.translate(
+            offset: Offset(0, _floatAnim.value),
+            child: SizedBox(
+              width: 440,
+              height: 500,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  // Soft background glow
+                  Positioned(
+                    bottom: 20,
+                    child: Container(
+                      width: 340,
+                      height: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.accent
+                                .withAlpha((_glowAnim.value * 100).toInt()),
+                            blurRadius: 80,
+                            spreadRadius: 10,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
+                  // Gradient border frame
+                  Container(
+                    width: 390,
+                    height: 460,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          AppColors.accent
+                              .withAlpha((_glowAnim.value * 200).toInt()),
+                          AppColors.accentSecondary
+                              .withAlpha((_glowAnim.value * 120).toInt()),
+                          AppColors.accent.withAlpha(20),
+                        ],
+                      ),
+                    ),
+                    padding: const EdgeInsets.all(2),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(27),
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: [
+                          // Profile image
+                          Image.asset(
+                            MyImages.myProfileImage,
+                            fit: BoxFit.cover,
+                            errorBuilder: (_, __, ___) => Container(
+                              color: AppColors.card,
+                              child: const Icon(Icons.person_rounded,
+                                  color: AppColors.textMuted, size: 120),
+                            ),
+                          ),
+                          // Subtle dark overlay — bottom-up gradient
+                          Positioned.fill(
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                    Colors.black.withAlpha(30),
+                                    Colors.black.withAlpha(110),
+                                  ],
+                                  stops: const [0.5, 1.0],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
