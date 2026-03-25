@@ -4,22 +4,22 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class MyStrings {
   MyStrings._();
 
-  static final List<String> keywords = ["Design", "Develop", "Debug", "Deploy"];
+  static final List<String> keywords = ["Flutter", "Cloud", "AI", "DevOps"];
 
-  static final String headLine = "Howdy, It's Shakib";
-  static final String tagLine = "Welcome to my territory!";
+  // static final String headLine = "I'm Shakib";
+  static final String tagLine = "CTO · Engineer · Builder";
 
   static final List<String> homePageMainContents = [
-    "Hi",
-    "Are you looking for the best Flutter Developer?",
-    "Then you are at the right place",
-    "Look around and explore",
-    "I am sure you will find me interesting",
-    "If you don't, thanks for visiting me!"
+    "CTO & Co-founder @ Shpper",
+    "6+ years building production apps",
+    "Flutter · Firebase · Cloud · AI",
+    "Leading 20+ engineers at Shpper Dubai",
+    "Building the future of logistics & e-commerce",
+    "Explore my work below ↓",
   ];
 
   static final String myName = "Hossain K M Shahriar";
-  static final String myTagLine = "CTO & Co-founder · Flutter · Cloud · AI";
+  static final String myTagLine = "CTO · Flutter · Cloud · AI";
   static final String myDescription = '''
 Over six years of shipping production software have taken me from writing my first Python scripts to leading enterprise-scale engineering teams as a CTO. Flutter became my primary craft early on, and today I engineer full-stack, cloud-native systems at the intersection of mobile, AI, and infrastructure.
 
@@ -76,7 +76,4 @@ As CTO and Co-founder of Shpper, a Dubai-based tech startup, I lead a distribute
       "tooltip": MyStrings.myGithub,
     }
   ];
-
-  static final String loremPara =
-      "Lorem labore amet eu ex aliquip ex fugiat. Fugiat enim et irure ullamco quis sint sint laborum adipisicing do tempor. Qui anim occaecat elit amet magna est. Ex proident culpa voluptate adipisicing amet duis. Lorem deserunt incididunt magna magna veniam aliquip Lorem. Elit minim nisi nisi proident nulla veniam commodo occaecat voluptate eiusmod non duis sint.";
 }
